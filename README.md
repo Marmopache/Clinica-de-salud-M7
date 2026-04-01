@@ -1,8 +1,8 @@
-# ClinicaVitalCare
+# Clinica de salud - M7
 
 ## Descripción
 
-Aplicación web desarrollada con Django para la gestión de pacientes, médicos y horas médicas.
+Aplicación web desarrollada con Django para la gestión de pacientes.
 
 ## Tecnologías
 
