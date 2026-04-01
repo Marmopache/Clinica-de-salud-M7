@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="card shadow-sm p-4">
+        <h3 class="text-center mb-4">Panel de Control</h3>
+        <div class="row justify-content-center g-4">
+
+            <!-- Botón Pacientes -->
+            <div class="col-md-3 col-sm-6 text-center">
+                <a href="{% url 'paciente_list' %}" class="btn btn-estandar btn-lg w-100 py-4 shadow-sm">
+                    <i class="fa-solid fa-user-injured fa-2x mb-2"></i>
+                    <br>Pacientes
+                </a>
+            </div>
+
+            <!-- Botón Doctores -->
+            <div class="col-md-3 col-sm-6 text-center">
+                <a href="{% url 'doctor_list' %}" class="btn btn-estandar btn-lg w-100 py-4 shadow-sm">
+                    <i class="fa-solid fa-user-doctor fa-2x mb-2"></i>
+                    <br>Médicos
+                </a>
+            </div>
+
+            <!-- Botón Horas Médicas -->
+            <div class="col-md-3 col-sm-6 text-center">
+                <a href="{% url 'hora_list' %}" class="btn btn-estandar btn-lg w-100 py-4 shadow-sm">
+                    <i class="fa-solid fa-calendar-check fa-2x mb-2"></i>
+                    <br>Horas
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

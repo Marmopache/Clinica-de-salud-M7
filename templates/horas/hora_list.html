@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>Horas Médicas</h3>
+            <a href="{% url 'hora_create' %}" class="btn btn-estandar shadow-sm">
+                <i class="fa-solid fa-plus me-1"></i> Nueva Hora
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-horas text-white">
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Motivo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hora in horas %}
+                    <tr>
+                        <td>{{ hora.paciente.nombre }} {{ hora.paciente.apellido_paterno }} {{ hora.paciente.apellido_materno }}</td>
+                        <td>{{ hora.doctor.nombre }} {{ hora.doctor.apellido_paterno }} {{ hora.doctor.apellido_materno }}</td>
+                        <td>{{ hora.fecha }}</td>
+                        <td>{{ hora.hora }}</td>
+                        <td>{{ hora.motivo }}</td>
+                        <td>
+                            <a href="{% url 'hora_update' hora.id %}" class="btn btn-editar btn-sm shadow-sm">
+                                <i class="fa-solid fa-pen-to-square"></i> Editar
+                            </a>
+                            <a href="{% url 'hora_delete' hora.id %}" class="btn btn-danger btn-sm shadow-sm">
+                                <i class="fa-solid fa-trash"></i> Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center">No hay horas médicas registradas.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

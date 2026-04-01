@@ -1,0 +1,74 @@
+/* ==========================
+   VARIABLES DE COLOR
+   ========================== */
+:root {
+    --basecolor: #0c6cae;
+    --darkbasecolor: #063b5f;
+    --whitecolor: #ffffff; 
+}
+
+/* ==========================
+   REUTILIZABLES
+   ========================== */
+
+.text-basecolor {
+  color: var(--basecolor);
+}
+
+.icon-basecolor {
+  color: var(--basecolor);
+}
+
+/* ==========================
+   NAVBAR
+   ========================== */
+
+.navbar {
+  background-color: var(--basecolor);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: var(--whitecolor);
+  transition: background-color 0.3s;
+}
+
+
+/* ==========================
+   FOOTER
+   ========================== */
+
+footer.footer {
+  background-color: var(--basecolor);
+  color: var(--whitecolor);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+
+/* ==========================
+   BOTONES
+   ========================== */
+
+.btn-estandar {
+  background-color: var(--basecolor);
+  color:var(--whitecolor);
+  transition: all 0.3s ease;
+
+  /* sombra en el texto */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* hover */
+.btn-estandar:hover {
+  background-color: var(--darkbasecolor);
+  color: var(--whitecolor);
+}
+
+.btn-editar {
+  background-color: #747c80;
+  color: var(--whitecolor);
+  transition: all 0.3s ease;
+}

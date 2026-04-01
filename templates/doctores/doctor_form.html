@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
+        <h3 class="text-center mb-4">
+            {{ form.instance.id|yesno:"Editar Doctor,Nuevo Doctor" }}
+        </h3>
+
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-estandar btn-lg shadow-sm">
+                    <i class="fa-solid fa-floppy-disk me-1"></i> Guardar
+                </button>
+                <a href="{% url 'doctor_list' %}" class="btn btn-secondary btn-lg shadow-sm">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
