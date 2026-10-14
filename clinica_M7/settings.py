@@ -11,23 +11,14 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+from decouple import config, Csv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$pt7!^o0eyo%nk9+5qoc(6$6x=65jkj4e_^dmt$+-5ad1a933x'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+# Security: values come from the .env file, never from the code
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
 
 # Application definition
 
@@ -105,12 +96,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Configuración de bcrypt para hashing de contraseñas PBKDF2 (Funcion 2 de derivacion de clave basada en contraseña)
 # Nist (instituto nacional de estandares y tecnologia) recomienda bcrypt, scrypt o argon2 para hashing de contraseñas
+
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.Argon2PasswordHasher',
-    'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
 
 # Configuracion para las redirecciones despues de login/logout
