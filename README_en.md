@@ -1,4 +1,4 @@
-[Leer en español](README_es.md)
+[Leer en español](README.md)
 
 # Clinic Management System
 
