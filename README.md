@@ -1,4 +1,4 @@
-[Read in English](README-en.md)
+[Read in English](README_en.md)
 
 # Sistema de Gestión de Clínica
 
